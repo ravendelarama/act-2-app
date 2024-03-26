@@ -6,41 +6,42 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    private $users = [
+        [
+            'id' => 1,
+            'name' => 'Raven Dela Rama',
+            'email' => 'official.ravendelarama@gmail.com',
+        ],
+        [
+            'id' => 2,
+            'name' => 'Raven Dela Rama',
+            'email' => 'official.ravendelarama@gmail.com',
+        ],
+        [
+            'id' => 3,
+            'name' => 'Raven Dela Rama',
+            'email' => 'official.ravendelarama@gmail.com',
+        ],
+        [
+            'id' => 4,
+            'name' => 'Raven Dela Rama',
+            'email' => 'official.ravendelarama@gmail.com',
+        ],
+        [
+            'id' => 5,
+            'name' => 'Raven Dela Rama',
+            'email' => 'official.ravendelarama@gmail.com',
+        ],
+    ];
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $users = [
-            [
-                'id' => 1,
-                'name' => 'Raven Dela Rama',
-                'email' => 'official.ravendelarama@gmail.com',
-            ],
-            [
-                'id' => 2,
-                'name' => 'Raven Dela Rama',
-                'email' => 'official.ravendelarama@gmail.com',
-            ],
-            [
-                'id' => 3,
-                'name' => 'Raven Dela Rama',
-                'email' => 'official.ravendelarama@gmail.com',
-            ],
-            [
-                'id' => 4,
-                'name' => 'Raven Dela Rama',
-                'email' => 'official.ravendelarama@gmail.com',
-            ],
-            [
-                'id' => 5,
-                'name' => 'Raven Dela Rama',
-                'email' => 'official.ravendelarama@gmail.com',
-            ],
-        ];
 
         return response([
-            'users' => $users
+            'users' => $this->users
         ]);
     }
 
@@ -59,35 +60,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        $users = [
-            [
-                'id' => 1,
-                'name' => 'Raven Dela Rama',
-                'email' => 'official.ravendelarama@gmail.com',
-            ],
-            [
-                'id' => 2,
-                'name' => 'Raven Dela Rama',
-                'email' => 'official.ravendelarama@gmail.com',
-            ],
-            [
-                'id' => 3,
-                'name' => 'Raven Dela Rama',
-                'email' => 'official.ravendelarama@gmail.com',
-            ],
-            [
-                'id' => 4,
-                'name' => 'Raven Dela Rama',
-                'email' => 'official.ravendelarama@gmail.com',
-            ],
-            [
-                'id' => 5,
-                'name' => 'Raven Dela Rama',
-                'email' => 'official.ravendelarama@gmail.com',
-            ],
-        ];
 
-        $user = $users[$id - 1];
+        $user = $this->users[$id - 1];
 
         return response([
             'user' => $user

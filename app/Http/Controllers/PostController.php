@@ -6,41 +6,43 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    private $posts = [
+        [
+            'id' => 1,
+            'title' => 'Post 1',
+            'body' => 'This is the body',
+        ],
+        [
+            'id' => 2,
+            'title' => 'Post 2',
+            'body' => 'This is the body',
+        ],
+        [
+            'id' => 3,
+            'title' => 'Post 3',
+            'body' => 'This is the body',
+        ],
+        [
+            'id' => 4,
+            'title' => 'Post 4',
+            'body' => 'This is the body',
+        ],
+        [
+            'id' => 5,
+            'title' => 'Post 5',
+            'body' => 'This is the body',
+        ],
+    ];
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $posts = [
-            [
-                'id' => 1,
-                'title' => 'Post 1',
-                'body' => 'This is the body',
-            ],
-            [
-                'id' => 2,
-                'title' => 'Post 2',
-                'body' => 'This is the body',
-            ],
-            [
-                'id' => 3,
-                'title' => 'Post 3',
-                'body' => 'This is the body',
-            ],
-            [
-                'id' => 4,
-                'title' => 'Post 4',
-                'body' => 'This is the body',
-            ],
-            [
-                'id' => 5,
-                'title' => 'Post 5',
-                'body' => 'This is the body',
-            ],
-        ];
+
 
         return response([
-            'posts' => $posts
+            'posts' => $this->posts
         ]);
     }
 
@@ -59,35 +61,8 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        $posts = [
-            [
-                'id' => 1,
-                'title' => 'Post 1',
-                'body' => 'This is the body',
-            ],
-            [
-                'id' => 2,
-                'title' => 'Post 2',
-                'body' => 'This is the body',
-            ],
-            [
-                'id' => 3,
-                'title' => 'Post 3',
-                'body' => 'This is the body',
-            ],
-            [
-                'id' => 4,
-                'title' => 'Post 4',
-                'body' => 'This is the body',
-            ],
-            [
-                'id' => 5,
-                'title' => 'Post 5',
-                'body' => 'This is the body',
-            ],
-        ];
 
-        $post = $posts[$id - 1];
+        $post = $this->posts[$id - 1];
 
         return response([
             'post' => $post
