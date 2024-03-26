@@ -39,8 +39,6 @@ class PostController extends Controller
      */
     public function index()
     {
-
-
         return response([
             'posts' => $this->posts
         ]);
@@ -61,7 +59,6 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-
         $post = $this->posts[$id - 1];
 
         return response([

@@ -39,7 +39,6 @@ class UserController extends Controller
      */
     public function index()
     {
-
         return response([
             'users' => $this->users
         ]);
@@ -60,7 +59,6 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-
         $user = $this->users[$id - 1];
 
         return response([
