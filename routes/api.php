@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth.token')->group(function () {
-    Route::resources([
+    Route::apiResources([
         'users' => UserController::class,
         'posts' => PostController::class
     ]);

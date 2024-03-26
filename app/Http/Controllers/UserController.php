@@ -45,16 +45,6 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return response([
-            'success' => 'User created!'
-        ]);
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
@@ -101,16 +91,6 @@ class UserController extends Controller
 
         return response([
             'user' => $user
-        ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        return response([
-            'success' => 'User updated!'
         ]);
     }
 
